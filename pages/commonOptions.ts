@@ -7,15 +7,15 @@ export class CommonOptions {
   readonly inputValues: Locator;
   readonly checkBoxes: Locator;
   readonly dropDown: Locator;
-  readonly fileuploader:Locator;
+  readonly fileUploader: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.addRemoveElementPage = page.locator('a', { hasText: 'Add/Remove Elements' });
-    this.inputValues = page.locator('a',{hasText: 'Inputs'})
-    this.checkBoxes = page.locator('a',{hasText: 'checkboxes'})
-    this.dropDown = page.locator('a',{hasText: 'Dropdown'})
-    this.fileuploader = page.locator('a',{hasText: 'File Upload'})
+    this.inputValues = page.locator('a', { hasText: 'Inputs' })
+    this.checkBoxes = page.locator('a', { hasText: 'checkboxes' })
+    this.dropDown = page.locator('a', { hasText: 'Dropdown' })
+    this.fileUploader = page.locator('a', { hasText: 'File Upload' })
     this.baseURL = '/'
   }
 
@@ -25,17 +25,16 @@ export class CommonOptions {
   async clickOnAddRemoveElement() {
     await this.addRemoveElementPage.click();
   }
-  async clickOnInputs(){
+  async clickOnInputs() {
     await this.inputValues.click()
   }
-  async clickOnCheckBoxes(){
+  async clickOnCheckBoxes() {
     await this.checkBoxes.click()
   }
-  async clickOnDropDown(){
+  async clickOnDropDown() {
     await this.dropDown.click()
   }
-  async clickOnUpload(){
-    await this.fileuploader.click()
-
+  async clickOnUpload() {
+    await this.fileUploader.click()
   }
 }

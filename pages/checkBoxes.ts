@@ -15,11 +15,13 @@ export class CheckBoxes {
     }
     async verifyCheckBoxChecked(){
         await expect(this.checkBoxes1.first()).toBeChecked();
+        await this.page.waitForTimeout(2000);        
     }
     async unselectCheckBox2(){
         await this.checkBoxes1.last().click();
     }
     async verifyCheckBoxWasUnselected(){
         await expect(this.checkBoxes1.last()).not.toBeChecked();
+        await this.page.waitForTimeout(2000);
     }
 }

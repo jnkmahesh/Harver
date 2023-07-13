@@ -10,11 +10,12 @@ export class InputValues {
         this.inputNumberField = page.locator('[class="example"]>input');
         this.removeBtn = page.locator('button', { hasText: 'Delete' });
     }
-    async enterValueToTextField(randomValue){
+    async enterValueToTextField(randomValue) {
         await this.inputNumberField.fill(randomValue);
         await this.inputNumberField.type('Tab');
     }
-    async verifyNumbersWereAdded(){
-        await expect(this.inputNumberField).toBeTruthy()
+    async verifyNumbersWereAdded() {
+        await expect(this.inputNumberField).toBeTruthy();
+        await this.page.waitForTimeout(2000);
     }
 }

@@ -23,6 +23,7 @@ export class DropdownList {
         await this.option2.click();
     }
     async verifyOption1selected(){
-        await expect(this.option1).toBeVisible()
+        await expect(this.option1).toBeVisible();
+        await this.page.waitForTimeout(2000);
     }
 }

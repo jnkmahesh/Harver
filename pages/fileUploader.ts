@@ -13,12 +13,13 @@ export class FileUploader {
         this.fileUploadedSuccessMessage = page.locator('h3')
     }
     async uploadFile(fileName){
-        const filePath = 'Files/'+fileName+'.txt';
+        const filePath = 'files/'+fileName+'.txt';
         await this.chooseFile.setInputFiles(filePath);
         await this.uploadButton.click();
     }
 
     async verifyuploadFileSuccess(){
-        await expect(this.fileUploadedSuccessMessage).toBeVisible()
+        await expect(this.fileUploadedSuccessMessage).toBeVisible();
+        await this.page.waitForTimeout(2000);
     }
 }

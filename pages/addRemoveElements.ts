@@ -1,6 +1,6 @@
 import { expect, Locator, Page } from '@playwright/test';
 
-export class AddRemoveElementsPage {
+export class AddRemoveElements {
     readonly page: Page;
     readonly addElemntBtn: Locator;
     readonly removeBtn: Locator;
@@ -16,6 +16,7 @@ export class AddRemoveElementsPage {
     }
     async verifyDeleteButtonAddedSuccessfully(){
         await expect(this.removeBtn).toBeVisible();
+        await this.page.waitForTimeout(2000);
     } 
     async clickOnRemoveButton() {
         await this.removeBtn.click();
@@ -23,5 +24,6 @@ export class AddRemoveElementsPage {
     }
     async verifyDeleteButtonRemovedSuccessfully(){
         await expect(this.removeBtn).not.toBeVisible();
+        await this.page.waitForTimeout(2000);
     }
 }
